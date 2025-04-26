@@ -1,0 +1,81 @@
+<section>
+   
+<div class="w-full h-[100vh] bg-stone-300 flex items-center relative">
+
+    <div class="w-[35%] h-[85vh] bg-stone-200">
+
+    </div>
+    <div class="w-[65%] h-[85vh] bg-white">
+
+    </div>
+
+
+   
+   
+</div>
+<div class=" w-[71%]  h-[60%] absolute flex justify-center items-center top-[20%] left-[15%] shadow-2xl  shadow-amber-700 rounded-xl">
+
+   <div class="text-center absolute top-0 mt-2  md:mt-7  text-lg md:text-2xl text-stone-600 bg-orange-300 rounded-2xl px-3 py-1">
+    <h1 class="font-[600] ">Login ..  </h1>
+   </div>
+<!-- 
+    <div class="relative">
+        <div class="w-[28%]  bg-white h-full">
+
+        </div>
+        <div class="w-[72%] bg-stone-300 h-full">
+    
+        </div>
+
+       
+    </div> -->
+
+    <div class="absolute p-5 md:p-0  ">
+        <div class=" flex flex-col-reverse md:flex-row  justify-around md:justify-around items-center gap-7 md:gap-2 md:mx-5  ">
+            <!-- image DIv -->
+            <div class="self-start  w-[90%] md:mr-3  md:w-[55%] h-full mb-2 ">
+                <img src="./pngwing.com.png" class="w-[100%] h-[100%] " alt="">
+            </div>
+
+            <!-- login form Div -->
+            <div class="justify-center w-[90%] md:w-[45%] h-full px-0 md:px-2 mt-8 md:mt-0">
+                
+                    
+                        <label for="input-group-1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <div class=" mb-6">
+                        
+                        <input [(ngModel)]="userName"  type="text" id="input-group-1" class="bg-orange-100 border border-gray-300
+                         text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full  p-2.5 
+                          dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           placeholder="">
+                        </div>
+
+
+
+                        <label for="website-admin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <div class="flex">
+                       
+                        <input [(ngModel)]="password"  type="password" id="website-admin" class=" rounded-lg bg-orange-100 
+                        border text-gray-900 focus:ring-orange-300 focus:border-orange-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5
+                          dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           placeholder="">
+                        </div>
+
+
+                        <div class="flex justify-center md:justify-start items-center">
+                            <button  (click)="userLogin()" class="bg-orange-400 px-3 py-1 rounded mt-4 text-gray-700 font-[500]
+                         w-[50%] text-center  md:w-[25%] ">
+                         login
+                        </button>
+                        </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+    
+
+</section>
