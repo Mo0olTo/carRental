@@ -2,3 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    font-family: "Montserrat";
+    margin: 0;
+    box-sizing: border-box;
+
+
+    .btn__main {
+        @apply py-2 md:py-1 px-3 text-white text-sm md:text-lg  bg-orange-400 rounded-lg mb-2 mt-4 md:mb-0 hover:text-orange-900 focus:ring-orange-500 md:hover:bg-orange-500 text-center font-[600] uppercase;
+    }
+
+    .title__main {
+        @apply text-2xl font-[700] text-orange-400 uppercase text-center ;
+    }
+
+
+    .title__heading {
+        @apply text-xl font-[700] text-orange-500  ;
+    }
+}
+

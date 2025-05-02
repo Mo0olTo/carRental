@@ -1,0 +1,78 @@
+<Section class="container bg-stone-100 min-h-[100vh]">
+
+    <div class="">
+
+        <div class="flex justify-center items-center py-11">
+            
+
+        </div>
+
+
+
+        <div class="p-[3%] bg-stone-300 rounded-2xl w-3/4 mx-auto">
+          
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400    ">
+
+       
+
+            <tbody class=" ">
+                <tr class="border-b border-gray-200 dark:border-gray-700 ">
+                    <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-tl-lg whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4 ">
+                        Booking Id
+                    </th>
+                    <td class="px-6 py-4 text-white rounded-tr-lg">
+                        {{BookingDataElement.bookingId}}
+                    </td>
+                  
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600  whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
+                        Customer Id
+                    </th>
+                    <td class="px-6 py-4 text-white">
+                        {{BookingDataElement.custId}}
+                    </td>
+               
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-l-sm whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
+                        Car Id 
+                    </th>
+                    <td class="px-6 py-4 text-whiet">
+                        {{BookingDataElement.carId}}
+                    </td>
+                 
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-bl-lg whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
+                        Booking Date
+                    </th>
+                    <td class="px-6 py-4 text-white rounded-br-lg">
+                         {{BookingDataElement.bookingId|date:'short'}}
+                    </td>
+              
+                </tr>
+    
+            </tbody>
+            
+        
+       
+
+      
+    </table>
+</div>
+
+
+
+        <button routerLink="/vehicles" class=" btn__main " >
+            <a>
+              Navigate To   <i class="fa-solid fa-house "></i>
+            </a>
+        </button>
+
+        </div>
+    </div>
+   
+ </Section>

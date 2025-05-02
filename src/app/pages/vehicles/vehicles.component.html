@@ -1,1 +1,73 @@
-<p>vehicles works!</p>
+<Section class="container bg-stone-100 min-h-[100vh]">
+
+   <div class="pt-8 ">
+    <div class=" ">
+        <h1 class="text-2xl font-[700] text-orange-400 uppercase text-center  ">Vehicels Section</h1>
+    </div>
+
+    <div class=" grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 flex-col justify-center items-center md:flex-row md:justify-around md:items-center gap-4 gap-y-5 mt-10 md:px-4  p-5 ">
+        
+        
+            @for (car of carData; track $index) {
+
+                <div class=" bg-white border border-gray-400 rounded-xl shadow-lg  
+                shadow-orange-300 dark:bg-gray-800 dark:border-gray-700 hover:scale-[1.1] duration-[.5s] flex flex-col items-center h-[100%] relative">
+
+
+                   <!-- image section -->
+                  <div class="absolute top-[2px] right-[4px]" >
+                    <button  class="cursor-pointer text-black  mr-4 mt-4 hover:animate-bounce 
+                     ">
+                        <i (click)="removeCar(car.carId)" class="fa-solid fa-trash-can  text-orange-500 hover:text-red-600 hover:scale-[1.4]
+                         duration-[0.8s] text-lg md:text-2xl"></i>
+                        </button>
+                  </div>
+
+
+
+                       <div class=" min-w-[full] h-full">
+                        <img class="  p-3  " [src]="car.carImage" alt="" />
+                       </div>
+                   
+                   <div class=" p-3">
+                        <div class="flex flex-col  justify-between items-start text-sm">
+                           <div class="flex flex-col justify-evenly items-start">
+                               <p class="text-sm md:text-xl font-[600] text-orange-800">Brand : <span class="text-orange-400 font-[500]"> {{car.brand.slice(0,5)}}</span>  </p>
+                               <p class="text-sm md:text-xl font-[600] text-orange-800">carid : <span class="text-orange-400 font-[500]"> {{car.carId}}</span>  </p>
+                               <p class="text-sm md:text-xl font-[600] text-orange-800">Model : <span class="text-orange-400 font-[500]"> {{car.model.slice(0,5)}}</span> </p>
+                           </div>
+                           <div class="flex flex-col justify-evenly items-start text-sm">
+                               <p class="text-sm md:text-xl font-[600] text-orange-800">Year : <span class="text-orange-400 font-[500]"> {{car.year}}</span>  </p>
+                               
+                               <p class="text-sm md:text-xl font-[600] text-orange-800">Daily Fees : <span class="text-orange-400 font-[500]"> {{car.dailyRate | currency}}</span> </p>
+                           </div>
+                        </div>
+                        <button [routerLink]="['/booking' , car.carId]" class="btn__main w-full">
+                           book Car
+                        </button>
+
+                        
+                     <div class="  ">
+                   
+                   </div>
+
+                        
+   
+   
+   
+                     
+                   </div>
+
+                 
+               </div>
+
+            }
+
+
+         
+ 
+
+
+    </div>
+   </div>
+</Section>

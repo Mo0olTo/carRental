@@ -19,9 +19,14 @@ password:string='';
 
 
 userLogin():void{
-  if(this.userName =="mostafa" && this.password=="admin"){
+  if(this.userName ==="mostafa" && this.password==="admin"){
 
-    this.router.navigate(['/dashboard'])
+    
+
+    this.router.navigate(['/vehicles'])
+
+    
+    
   }
 }
 

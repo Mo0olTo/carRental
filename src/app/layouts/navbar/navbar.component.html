@@ -1,1 +1,169 @@
-<p>navbar works!</p>
+<section class=" ">
+    
+
+<nav class="bg-stone-300 border-orange-400 border-[2px] rounded-3xl  shadow-inner shadow-stone-700 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a routerLink="/vehicles" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="../1122peugeot-svgrepo-com.png" class="h-8 " alt="websiteLogo" />
+          <span class="self-center text-orange-500 font-[600] text-2xl  whitespace-nowrap dark:text-white">Car-Rental</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 
+        rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
+        <li class="">
+          <a class="block py-1 px-2 text-white bg-orange-400 
+          rounded-lg mb-2 md:mb-0 hover:text-orange-900 md:hover:bg-orange-500 text-center 
+       dark:text-white md:dark:text-blue-500 cursor-pointer"
+           type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+          Host A-Car
+        </a>
+        </li>
+     
+
+          <li>
+            <a  
+            routerLink="/vehicles"
+            class="block py-1 px-2 text-white bg-orange-400 
+                rounded-lg mb-2 md:mb-0 hover:text-orange-900 md:hover:bg-orange-500 text-center 
+             dark:text-white md:dark:text-blue-500"
+             aria-current="page">Vehicles</a>
+          </li>
+          <li>
+            <a 
+            routerLink="/booking" 
+            class="block py-1 px-2 text-white bg-orange-400 
+                rounded-lg mb-2 md:mb-0 hover:text-orange-900 md:hover:bg-orange-500 text-center 
+             dark:text-white md:dark:text-blue-500"
+             aria-current="page">Booking</a>
+          </li>
+          <li>
+            <a 
+            routerLink="/customer"
+            class="block py-1 px-2 text-white bg-orange-400 
+                rounded-lg mb-2 md:mb-0 hover:text-orange-900 md:hover:bg-orange-500 text-center 
+             dark:text-white md:dark:text-blue-500"
+             aria-current="page">Customers</a>
+          </li>
+
+
+
+
+
+          <!-- sideBar Modal -->
+          <div>
+            
+            
+
+                <!-- drawer init and show -->
+             
+
+                <!-- drawer component -->
+                <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-[65%] md:w-[25%] h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+                  <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Host A New Car</h5>
+
+                  <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                   class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center
+                    dark:hover:bg-gray-600 dark:hover:text-white" >
+
+                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <span class="sr-only">Close menu</span>
+                  </button>
+
+
+                  
+                <div class="py-4 overflow-y-auto">
+
+                  <div class="flex flex-col justify-between items-start">
+
+                 
+                        <form [formGroup]="newCarForm" (ngSubmit)="submitForm()">
+                          <div class="grid gap-6 mb-6 md:grid-cols-2">
+                              <div>
+                                  <label for="Brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+                                  <input 
+                                  formControlName="Brand"
+                                  type="text" id="Brand" 
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                   focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                                    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                              </div>
+                              <div>
+                                  <label for="Model" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Model</label>
+                                  <input 
+                                  formControlName="Model"
+                                  type="text" id="Model"
+                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                                     dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                              </div>
+                              <div>
+                                  <label for="Year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+                                  <input 
+                                  formControlName="Year"
+                                  type="number" id="Year" 
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                   focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                                    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                              </div>  
+                              <div>
+                                  <label for="Color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Color</label>
+                                  <input
+                                  formControlName="Color" 
+                                   type="text" id="Color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                      placeholder=""  required />
+                              </div>
+                              <div>
+                                  <label for="carImage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Car Image</label>
+                                  <input 
+                                  formControlName="CarImage"
+                                  type="url" id="carImage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                   focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                    placeholder="Image url" required />
+                              </div>
+                              <div>
+                                <label for="dailyRate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Daily Fees</label>
+                                <input formControlName="DailyRate"
+                                 type="number" id="dailyRate"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                   focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                     placeholder="2500$"  required />
+                            </div>
+                            <div>
+                              <label for="regNum" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reg Num</label>
+                              <input 
+                              formControlName="RegNo"
+                              type="text" id="regNum" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                               focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="plates number"  required />
+                          </div>
+                              
+                          </div>
+                     
+                          <button  type="submit" class="btn__main ">Submit</button>
+                        </form>
+
+                  </div>
+                   
+                  </div>
+                </div>
+
+          </div>
+     
+    
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+</section>
