@@ -28,10 +28,14 @@ export class BookingComponent implements OnInit {
    successData:IbookingData={}as IbookingData;
 
 
+
+
     carId:string|null='';
 
     isSuccess:boolean=false
     isBooked:boolean=false
+
+
 
     alreadyBooked:string=''
 
@@ -64,6 +68,8 @@ export class BookingComponent implements OnInit {
 
       }
     })
+
+    
 
   }
 
@@ -105,6 +111,10 @@ export class BookingComponent implements OnInit {
     })
 
   }
+
+
+
+
   
 
 }

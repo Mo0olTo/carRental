@@ -4,10 +4,10 @@
 
         <div class="flex justify-center items-center py-11">
             
-
+            <h3 class="title__main">Booking Info</h3>
         </div>
 
-
+            
 
         <div class="p-[3%] bg-stone-300 rounded-2xl w-3/4 mx-auto">
           
@@ -22,7 +22,7 @@
                     <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-tl-lg whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4 ">
                         Booking Id
                     </th>
-                    <td class="px-6 py-4 text-white rounded-tr-lg">
+                    <td class="px-6 py-4 text-amber-700 text-xl font-[600] rounded-tr-lg">
                         {{BookingDataElement.bookingId}}
                     </td>
                   
@@ -31,7 +31,7 @@
                     <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600  whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
                         Customer Id
                     </th>
-                    <td class="px-6 py-4 text-white">
+                    <td class="px-6 py-4 text-amber-700 text-xl font-[600]">
                         {{BookingDataElement.custId}}
                     </td>
                
@@ -40,7 +40,7 @@
                     <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-l-sm whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
                         Car Id 
                     </th>
-                    <td class="px-6 py-4 text-whiet">
+                    <td class="px-6 py-4 text-amber-700 text-xl font-[600]">
                         {{BookingDataElement.carId}}
                     </td>
                  
@@ -49,7 +49,7 @@
                     <th scope="row" class="px-6 py-4 font-[600] text-[15px] text-orange-600 rounded-bl-lg whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 w-1/2 md:w-3/4">
                         Booking Date
                     </th>
-                    <td class="px-6 py-4 text-white rounded-br-lg">
+                    <td class="px-6 py-4 text-amber-700 text-xl font-[600]  rounded-br-lg flex flex-col items-start justify-center">
                          {{BookingDataElement.bookingId|date:'short'}}
                     </td>
               
@@ -66,11 +66,18 @@
 
 
 
-        <button routerLink="/vehicles" class=" btn__main " >
-            <a>
-              Navigate To   <i class="fa-solid fa-house "></i>
-            </a>
-        </button>
+        <div class="flex flex-col md:flex-row md">
+            <button routerLink="/vehicles" class=" btn__main " >
+                <a>
+                  Navigate To   <i class="fa-solid fa-house "></i>
+                </a>
+            </button>
+            <button [routerLink]="['/history']" class=" btn__main " >
+                <a>
+                  Booking History  <i class="fa-solid fa-user-check"></i>
+                </a>
+            </button>
+        </div>
 
         </div>
     </div>

@@ -24,6 +24,17 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
 
    carData:Icar[]=[]
 
+
+
+   rent:boolean=false;
+    host:boolean=false;
+
+
+
+
+    
+
+
   ngOnInit(): void {
     this.getdata()
    
@@ -32,7 +43,7 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
       
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit():void {
     this.flowbiteService.loadFlowbite(() => {
       
     });
@@ -76,6 +87,25 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
         
       }
     })
+  }
+
+
+  rentCar():void{
+    this.rent=true
+    this.host=false
+    
+  }
+
+  hostCar():void{
+    this.host=true;
+    this.rent=false;
+    this.carrentalService.agentHost.next(true)
+
+
+  } 
+
+  hideDiv(el:HTMLDivElement):void{
+    el.classList.add(`hidden`)
   }
 
 

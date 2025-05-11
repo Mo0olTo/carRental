@@ -15,6 +15,8 @@ export class CarrentalService {
 
   constructor(private httpClient:HttpClient ) {}
 
+  agentHost:BehaviorSubject<boolean>=new BehaviorSubject(false)
+
   bookedShowdata:BehaviorSubject<any>=new BehaviorSubject({})
 
    
@@ -51,6 +53,11 @@ export class CarrentalService {
 
   createNewBooking(data:Ibooking):Observable<any>{
     return this.httpClient.post(`/api/CreateNewBooking`,data)
+  }
+
+
+  filterBooking(id:number):Observable<any>{
+    return this.httpClient.get(`/api/geAllBookingsByCustomerId?custId=${id}`)
   }
 
 

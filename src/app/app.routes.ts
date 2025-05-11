@@ -8,6 +8,8 @@ import { VehiclesComponent } from './pages/vehicles/vehicles.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { BookingdataComponent } from './pages/bookingdata/bookingdata.component';
+import { BookingDataInfoComponent } from './pages/booking-data-info/booking-data-info.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 
 export const routes: Routes = [
@@ -23,6 +25,7 @@ export const routes: Routes = [
 
         {path:'booking/:id' , component:BookingComponent , title:'Booking'},
         {path:'bookingdata' , component:BookingdataComponent , title:'Booking Info'},
+        {path:'history' , component:HistoryComponent , title:'History'},
         {path:'dashboard' , component:DashboardComponent , title:'Dashboard'},
         {path:'customer' , component:CustomerComponent , title:'Customer'},
         {path:'vehicles' , component:VehiclesComponent , title:'Vehciles'},

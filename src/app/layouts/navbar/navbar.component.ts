@@ -1,6 +1,6 @@
 import { Router, RouterLink } from '@angular/router';
 import { FlowbiteService } from './../../core/services/flowbite/flowbite.service';
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { initFlowbite } from 'flowbite';
 import { CarrentalService } from '../../core/services/carrental.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Icar } from '../../shared/interface/icar';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit , OnInit {
 
   private readonly flowbiteService=inject(FlowbiteService)
   private readonly carrentalService=inject(CarrentalService)
@@ -22,6 +22,9 @@ export class NavbarComponent implements AfterViewInit {
 
 
   carData:Icar[]=[]
+
+  hostCarIcon:boolean = false;
+  isSidebarVisible:boolean=false
 
 
 
@@ -36,10 +39,25 @@ export class NavbarComponent implements AfterViewInit {
     
   })
 
-  ngAfterViewInit(): void {
-    this.flowbiteService.loadFlowbite(() => {
+    ngOnInit(): void {
+      this.carrentalService.agentHost.subscribe({
+        next:(res)=>{
+          this.hostCarIcon=res
+        }
+      })
+
+     
       
-    });
+    }
+
+    
+
+  ngAfterViewInit(): void {
+
+      this.flowbiteService.loadFlowbite(() => {
+      
+      });
+
   }
 
 
@@ -79,6 +97,15 @@ export class NavbarComponent implements AfterViewInit {
         
       }
     })
+  }
+
+  toggleSidebar(): void {
+    this.hostCarIcon = true;
+  
+    // Delay to allow Angular to render the element
+    setTimeout(() => {
+      initFlowbite();
+    }, 0);
   }
   
 
