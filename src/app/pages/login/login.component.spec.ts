@@ -5,7 +5,7 @@ import { LoginComponent } from './login.component';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [LoginComponent]
@@ -17,7 +17,11 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should bet true' , ()=>{
+    expect(component.userLogin()).toBeTrue()
+  })
+
+
+
+
 });

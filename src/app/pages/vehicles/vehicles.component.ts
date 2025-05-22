@@ -93,7 +93,7 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
   rentCar():void{
     this.rent=true
     this.host=false
-    
+    this.carrentalService.agentHost.next(false)
   }
 
   hostCar():void{

@@ -14,7 +14,7 @@ import { HistoryComponent } from './pages/history/history.component';
 
 export const routes: Routes = [
 
-    {path:'' , redirectTo:'login' , pathMatch:'full'},
+    {path:'' , redirectTo:'vehicles' , pathMatch:'full'},
     {path:'' , component:AuthComponent  , title:"Auth", children:[
         {path:'login' , component:LoginComponent , title:'Login'},
         
