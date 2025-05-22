@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environement } from '../Environment/environment';
 import { Icar } from '../../shared/interface/icar';
 import { Ibooking } from '../../shared/interface/ibooking';
-import { IbookingData } from '../../shared/interface/ibooking-data';
+
 
 
 @Injectable({
@@ -23,17 +23,17 @@ export class CarrentalService {
 
 
   getDashBoardData():Observable<any>{
-    return this.httpClient.get(`/api/GetDashboardData`)
+    return this.httpClient.get(`${environement.apiUrl}/GetDashboardData`)
   }
 
   getCarsData():Observable<any>{
-    return this.httpClient.get(`/api/GetCars`)
+    return this.httpClient.get(`${environement.apiUrl}/GetCars`)
   }
 
 
 
   creatNewCar(data:Icar):Observable<any>{
-    return this.httpClient.post(`/api/CreateNewCar`,data ,
+    return this.httpClient.post(`${environement.apiUrl}/CreateNewCar`,data ,
       {
         headers: { 'Content-Type': 'application/json' }
       }
@@ -42,7 +42,7 @@ export class CarrentalService {
 
 
   deleteCar(id:number):Observable<any>{
-    return this.httpClient.delete(`/api/DeleteCarbyCarId?carid=${id}`)
+    return this.httpClient.delete(`${environement.apiUrl}/DeleteCarbyCarId?carid=${id}`)
   }
 
 
@@ -52,12 +52,12 @@ export class CarrentalService {
 
 
   createNewBooking(data:Ibooking):Observable<any>{
-    return this.httpClient.post(`/api/CreateNewBooking`,data)
+    return this.httpClient.post(`${environement.apiUrl}/CreateNewBooking`,data)
   }
 
 
   filterBooking(id:number):Observable<any>{
-    return this.httpClient.get(`/api/geAllBookingsByCustomerId?custId=${id}`)
+    return this.httpClient.get(`${environement.apiUrl}/geAllBookingsByCustomerId?custId=${id}`)
   }
 
 
