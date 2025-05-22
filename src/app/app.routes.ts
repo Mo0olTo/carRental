@@ -1,3 +1,4 @@
+import { RenderMode } from '@angular/ssr';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
@@ -23,7 +24,7 @@ export const routes: Routes = [
     
     {path:'' , component:MainComponent  , children:[
 
-        {path:'booking/:id' , component:BookingComponent , title:'Booking'},
+        {path:'booking/:id' , component:BookingComponent , title:'Booking' , data:{RenderMode:'no-prerender'}},
         {path:'bookingdata' , component:BookingdataComponent , title:'Booking Info'},
         {path:'history' , component:HistoryComponent , title:'History'},
         {path:'dashboard' , component:DashboardComponent , title:'Dashboard'},
