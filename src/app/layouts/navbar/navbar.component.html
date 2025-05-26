@@ -63,7 +63,7 @@
                     <!-- drawer component -->
                     <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-[65%] md:w-[25%] h-screen p-4 overflow-y-auto transition-transform  -translate-x-full bg-white dark:bg-gray-800" 
                           tabindex="-1" aria-labelledby="drawer-navigation-label">
-                      <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Host A New Car</h5>
+                      <h5 id="drawer-navigation-label" class="text-base font-semibold  text-gray-500 uppercase dark:text-gray-400">Host A New Car</h5>
 
                       <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
                       class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center
@@ -125,7 +125,7 @@
                                       type="url" id="carImage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                                       focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                                         dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                                        placeholder="Image url" required />
+                                        placeholder="Image url" required  />
                                   </div>
                                   <div>
                                     <label for="dailyRate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Daily Fees</label>
@@ -147,11 +147,26 @@
                                   
                               </div>
                         
-                              <button  type="submit" class="btn__main ">Submit</button>
+                              <button [disabled]="newCarForm.invalid"  type="submit" class="btn__main ">Submit
+                                @if (isSuccess) {
+                                  <i class="fa-solid fa-spinner fa-spin"></i>
+                                }
+                              </button>
                             </form>
+
+                         
 
                       </div>
                       
+                      <div class="flex flex-row items-end justify-center">
+                          <div class="bg-orange-400 rounded-xl px-4 py-2 mt-6  w-1/2 ">
+
+                                <p class="text-center text-white capitalize">you have to insert all data</p>
+                              
+
+                            </div>
+                      </div>
+                       
                       </div>
                     </div>
 

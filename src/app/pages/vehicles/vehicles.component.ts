@@ -26,7 +26,7 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
 
 
 
-   rent:boolean=false;
+    rent:boolean=false;
     host:boolean=false;
 
 
@@ -48,6 +48,7 @@ export class VehiclesComponent implements OnInit , AfterViewInit , OnDestroy {
       
     });
 
+    
     
   }
 

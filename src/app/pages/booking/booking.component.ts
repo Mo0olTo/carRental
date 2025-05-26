@@ -1,5 +1,5 @@
 import { Component, inject, Injectable, Input, input, NgModule, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Ibooking } from '../../shared/interface/ibooking';
 import { CarrentalService } from '../../core/services/carrental.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -41,12 +41,12 @@ export class BookingComponent implements OnInit {
 
 
   bookingForm:FormGroup = this.formBuilder.group({
-    CustomerName:[null,],
-    CustomerCity:[null,],
-    MobileNo:[null,],
-    Email:[null,],
-    CarId:[null,],
-    BookingDate:[null,],
+    CustomerName:[null,[Validators.required]],
+    CustomerCity:[null,[Validators.required]],
+    MobileNo:[null,[Validators.required]],
+    Email:[null,[Validators.required]],
+    CarId:[null,[Validators.required]],
+    BookingDate:[null,[Validators.required]],
    
   })
 

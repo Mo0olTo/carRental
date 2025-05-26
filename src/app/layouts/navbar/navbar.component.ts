@@ -24,7 +24,11 @@ export class NavbarComponent implements AfterViewInit , OnInit {
   carData:Icar[]=[]
 
   hostCarIcon:boolean = false;
-  isSidebarVisible:boolean=false
+  isSidebarVisible:boolean=false;
+
+  file!:File
+
+  isSuccess:Boolean=false;
 
 
 
@@ -77,12 +81,17 @@ export class NavbarComponent implements AfterViewInit , OnInit {
 
 
   submitForm():void{
+    this.isSuccess=true;
+
     this.carrentalService.creatNewCar(this.newCarForm.value).subscribe({
       next:(res)=>{
         console.log(res);
         if(res.result===true){
           this.carData=res.data   
+          
         }
+
+         this.isSuccess=false;
 
         this.getCarsData();
 
@@ -107,6 +116,7 @@ export class NavbarComponent implements AfterViewInit , OnInit {
       initFlowbite();
     }, 0);
   }
-  
+
+
 
 }
